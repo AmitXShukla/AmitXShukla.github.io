@@ -4,6 +4,8 @@
 
 #### Angular Material - Static Website
 In this tutorial, we will be using Angular Material to build a static website.
+And in follow up tutorials, further We will enhance this webstie and implement Angular Universal and SEO for server side rendering and Search engine and social search capabilities.
+
 I assume you already have a successful Angular Development environment already setup and 
 if not, please visit https://github.com/AmitXShukla/Angular-Capacitor-Firebase-Setup
 
@@ -56,6 +58,27 @@ If you want to use the mat-icon component with the official Material Design Icon
 For more information on using Material Icons, check out the Material Icons Guide.
 Note that mat-icon supports any font or svg icons; using Material Icons is one of many options.
 
+#### Development Start
+##### create routes.ts  ng g interface shared/routes
+##### replace routes.ts text with 
+import { Router, RouterModule } from '@angular/router';
+export const APP_ROUTES = RouterModule.forRoot([
+    //{ path: '', redirectTo: '/aboutus', pathMatch: 'full' },
+    //{ path: '**', redirectTo: '/aboutus', pathMatch: 'full' }
+]);
+We will update route.ts later as we add new components/pages, for now, let’s keep these line commented.
+
+##### include APP_ROUTES from shared/routes.ts to app.module.ts  (add to IMPORT section)
+
+##### create custom material module    ng g module shared/custom.material
+##### copy below content to custom.material.ts file
+
+Include link to ElishCustomerMaterialModule.ts
+
+#####  update app.module.ts to include ElishCustomMaterialModule in IMPORT section (add to <IMPORT> section)
+
+##### Now You have all Angular Material dependencies installed.
+
 #### - Define Website Content and requirements
 This website will need a top tool bar.
 Left most icon at top tool bar will act as a home button which further toggle a left navigation.
@@ -76,110 +99,7 @@ At right most side of tool bar, it should include mat-icons for email, settings 
 2. At the bottom of the page, a footer needs to be included.
 This footer will have copyright statement and include all navigation links for SEO rendering.
 
-#### Development Start
-##### create routes.ts  ng g interface shared/routes
-##### replace routes.ts text with 
-import { Router, RouterModule } from '@angular/router';
-export const APP_ROUTES = RouterModule.forRoot([
-    //{ path: '', redirectTo: '/aboutus', pathMatch: 'full' },
-    //{ path: '**', redirectTo: '/aboutus', pathMatch: 'full' }
-]);
-We will update route.ts later as we add new components/pages, for now, let’s keep these line commented.
-
-##### include APP_ROUTES from shared/routes.ts to app.module.ts  (add to IMPORT section)
-
-##### create custom material module    ng g module shared/custom.material
-##### copy below content to custom.material.ts file
-
-import { NgModule } from '@angular/core';
-import { BrowserAnimationsModule,NoopAnimationsModule } from '@angular/platform-browser/animations';
-import { 
-        MatButtonModule,
-        MatCheckboxModule,
-        MatFormFieldModule,
-        MatDialogModule,
-        MatTabsModule,
-        MatProgressSpinnerModule,
-        MatMenuModule,
-        MatIconModule,
-        MatInputModule,
-        MatSelectModule,
-        MatToolbarModule,
-        MatCardModule,
-        MatChipsModule,
-        MatListModule,
-        MatTooltipModule,
-        MatNativeDateModule,
-        MatDatepickerModule,
-        MatTableModule,
-        MatPaginatorModule,
-        MatProgressBarModule,
-        MatSortModule,
-        MatSnackBarModule,
-        MatStepperModule
-        } from '@angular/material';
-
-@NgModule({
-    imports: [
-        BrowserAnimationsModule,
-        NoopAnimationsModule,
-        MatButtonModule,
-        MatCheckboxModule,
-        MatFormFieldModule,
-        MatDialogModule,
-        MatTabsModule,
-        MatProgressSpinnerModule,
-        MatMenuModule,
-        MatIconModule,
-        MatInputModule,
-        MatSelectModule,
-        MatToolbarModule,
-        MatCardModule,
-        MatChipsModule,
-        MatListModule,
-        MatTooltipModule,
-        MatNativeDateModule,
-        MatDatepickerModule,
-        MatTableModule,
-        MatPaginatorModule,
-        MatProgressBarModule,
-        MatSortModule,
-        MatSnackBarModule,
-        MatStepperModule
-        ],
-    exports: [
-        BrowserAnimationsModule,
-        NoopAnimationsModule,
-        MatButtonModule,
-        MatFormFieldModule,
-        MatCheckboxModule,
-        MatTabsModule,
-        MatProgressSpinnerModule,
-        MatMenuModule,
-        MatIconModule,
-        MatInputModule,
-        MatSelectModule,
-        MatToolbarModule,
-        MatCardModule,
-        MatChipsModule,
-        MatListModule,
-        MatTooltipModule,
-        MatNativeDateModule,
-        MatDatepickerModule,
-        MatTableModule,
-        MatPaginatorModule,
-        MatProgressBarModule,
-        MatSortModule,
-        MatSnackBarModule,
-        MatStepperModule
-        ]
-})
-export class ElishCustomMaterialModule { }
-
-#####  update app.module.ts to include ElishCustomMaterialModule in IMPORT section (add to <IMPORT> section)
-
-##### Now You have all Angular Material dependencies installed.
-
+#### Development tasks
 Now it's time to add header and footer components
 create a new footer 
 ##### ng g component shared/footer
