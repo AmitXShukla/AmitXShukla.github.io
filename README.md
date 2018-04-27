@@ -170,4 +170,5 @@ Create one page and link to this page to router-outlet and routes.ts
 
 in case of error, include HttpClientModule
 
+
 <span style="color:green">Convert all MAT-ICON for offline use</span>
