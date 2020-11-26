@@ -14319,7 +14319,7 @@ a.anchor-link {
 <pre><code>browse to Compute Engine -&gt; VM Instances -&gt; New VM Instance
 
 </code></pre>
-<p><strong>Let's spin a moderate size windows compute optmiized VM in Google cloud</strong></p>
+<p><strong>Let's spin a moderate size windows compute Optimized VM in Google cloud</strong></p>
 <p><img src="https://raw.githubusercontent.com/AmitXShukla/AmitXShukla.github.io/master/blogs/julia/images/windows_vm.png" alt="Google cloud Windows VM"></p>
 <p><strong>Once Google VM is installed, please start the machine and setup windows password</strong></p>
 <p><img src="https://raw.githubusercontent.com/AmitXShukla/AmitXShukla.github.io/master/blogs/julia/images/windows_vm_start.png" alt="Google cloud Windows VM"></p>
@@ -14342,7 +14342,7 @@ a.anchor-link {
 <pre><code>browse to Compute Engine -&gt; VM Instances -&gt; New VM Instance
 
 </code></pre>
-<p>Let's spin a moderate size Linux compute optmiized VM in Google cloud</p>
+<p>Let's spin a moderate size Linux compute Optimized VM in Google cloud</p>
 <p><img src="https://raw.githubusercontent.com/AmitXShukla/AmitXShukla.github.io/master/blogs/julia/images/linux_vm.png" alt="Google cloud Windows VM"></p>
 <p>If you want a complete Linux desktop experience, please follow this blog.</p>
 <p><a href="https://medium.com/@Amit_Shukla/how-to-install-debian-10-buster-or-ubuntu-18-19-desktop-on-google-cloud-and-access-through-vnc-687c05d0d263">Detail instuctions - How to Install Debian 10 (Buster) or Ubuntu 18/19 Desktop on Google Cloud and access through VNC</a></p>
@@ -14394,7 +14394,15 @@ a.anchor-link {
 <h2 id="5a.-How-to-run-&amp;-access-Jupyter-notebook-through-remote-browser">5a. How to run &amp; access Jupyter notebook through remote browser<a class="anchor-link" href="#5a.-How-to-run-&amp;-access-Jupyter-notebook-through-remote-browser">&#182;</a></h2><p>on your server, first start Jupyter environment using this command</p>
 
 </div>
-</div>jupyter notebook --no-browser --port 1234
+</div>Julia > Using Pkg; 
+        Pkg.add("IJulia");
+        using IJulia;
+        installkernel("Julia (4 threads)", env=Dict("JULIA_NUM_THREADS"=>"4"))
+            # JULIA_NUM_THREADS should be cores availbale as per your machine
+        jupyterlab();
+or
+
+jupyter notebook --no-browser --port 1234
 
 # above command will start a notebook server with URL like http://localhost:8888/?token=abc123........
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
@@ -14424,10 +14432,14 @@ ssh -L 1234:localhost:1234 -i /path/to/private_key
 </div>
 </div>Julia > Using Pkg; 
         Pkg.add("Pluto")
+        Pluto.CONFIG["PLUTO_RUN_NOTEBOOK_ON_LOAD"] = "false" Pluto.ENV_DEFAULTS["PLUTO_RUN_NOTEBOOK_ON_LOAD"] = "false"
+            # above command is optional and prevent notebook to auto-run on load
         Pluto.run(; launch_browser: "false", host: "0.0.0.0", port: 1234)
         
 # above commands will start Pluto on http://[cloudvmipaddress]:[port]/
+
 or
+        
 # alternate, like Jupyter, you can always access your Pluto notebook through SSH termial as well
 ssh user@ipaddress -LN 1234:localhost:1234
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
