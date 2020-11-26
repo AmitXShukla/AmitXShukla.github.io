@@ -14398,7 +14398,7 @@ a.anchor-link {
         Pkg.add("IJulia");
         using IJulia;
         installkernel("Julia (4 threads)", env=Dict("JULIA_NUM_THREADS"=>"4"))
-            # JULIA_NUM_THREADS should be cores availbale as per your machine
+            # JULIA_NUM_THREADS should be cores available as per your machine
         jupyterlab();
 or
 
@@ -14440,7 +14440,7 @@ ssh -L 1234:localhost:1234 -i /path/to/private_key
 
 or
         
-# alternate, like Jupyter, you can always access your Pluto notebook through SSH termial as well
+# alternate, like Jupyter, you can always access your Pluto notebook through SSH terminal as well
 ssh user@ipaddress -LN 1234:localhost:1234
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
@@ -14489,10 +14489,11 @@ sudo ufw allow 80/tcp
 <h1 id="8.-Understanding-Julia-Project,-Application,-Environment,-Package">8. Understanding Julia Project, Application, Environment, Package<a class="anchor-link" href="#8.-Understanding-Julia-Project,-Application,-Environment,-Package">&#182;</a></h1><p>Each of these terms above describes what are you trying to achieve.</p>
 <p><strong>A Julia language Project</strong> is literally a project, reflects your objective you are trying to accomplish in your project.
 Like any other software project, your project has source code files typically placed under “src” directory, documentation under “docs” and test cases kept in “test” directory.</p>
-<p><strong>Application</strong> is a kind of project trying to achieve a specific goal, for example, a micro services or web app or Research analysis or white paper. Applications unlike Package &amp; Environment don’t need UUID. It can be a simple notebook or Julia file.</p>
+<p><strong>Application</strong> is a kind of project trying to achieve a specific goal, for example, a micro services or web app or Research analysis or white paper. Applications unlike Package &amp; Environment don't need UUID. It can be a simple notebook or Julia file. Applications can provide global configuration, whereas packages cannot.</p>
 <p><strong>Environment</strong> is a Julia Lang environment, which completely describes all packages and related dependency. Julia environment typically keep required packages (specific UUID – universal unique identifier) in “project.toml” and “manifesto.toml” complete dependency graph of packages.</p>
 <p>Environments are helpful to complete re-produce a work environment in any other developer machine.</p>
-<p><strong>Package</strong> is typically like a Julia Environment with a clear motive, that this package can be used in other Julia language development environments/projects.</p>
+<p><strong>Package</strong> is typically like a Julia Environment with a clear motive, that this package provide re-usable functionalities that can be used in other Julia language development environments/projects.</p>
+<p><strong>Modules</strong> are individual components of your overall Julia package which implement a discrete functionality.</p>
 <p>learn more -</p>
 <p><a href="https://julialang.github.io/Pkg.jl/dev/glossary/">https://julialang.github.io/Pkg.jl/dev/glossary/</a></p>
 <p><a href="https://julialang.github.io/Pkg.jl/dev/getting-started/">https://julialang.github.io/Pkg.jl/dev/getting-started/</a></p>
