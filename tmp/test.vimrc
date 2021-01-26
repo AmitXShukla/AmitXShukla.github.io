@@ -4,9 +4,12 @@ call plug#begin()
 	Plug 'itchyny/lightline.vim'
 	Plug 'neoclide/coc.nvim', {'branch': 'release'}
 	Plug 'frazrepo/vim-rainbow'
+	Plug 'lifepillar/vim-solarized8'
 call plug#end()
 
-colorscheme morning
+" colorscheme morning
+set background=light
+colorscheme solarized8
 
 syntax on
 set spell spelllang=en_us
