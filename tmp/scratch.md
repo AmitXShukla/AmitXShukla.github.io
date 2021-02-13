@@ -61,3 +61,29 @@
 	    Press p to go to parent directory.
 	    Press r to refresh the current directory.
 
+
+## TMUX
+#### Start a new session
+tmux
+tmux new
+tmux new-session :new
+
+#### Start a new session with the name  mysession
+tmux new -s mysession
+:new -s mysession
+
+#### kill/delete session mysession
+tmux kill-session -t mysession
+#### kill/delete all sessions but the current
+tmux kill-session -a
+#### kill/delete all sessions but mysession
+tmux kill-session -a -t mysession
+#### Rename session
+Ctrl+ b$
+#### Detach from session
+Ctrl+ bd
+#### Show all sessions 
+tmux ls
+Ctrl + b s
+#### Attach to last session
+tmux a
