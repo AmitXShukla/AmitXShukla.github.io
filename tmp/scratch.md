@@ -60,7 +60,12 @@
 	    Press s to open the file in a new vertical split.
 	    Press p to go to parent directory.
 	    Press r to refresh the current directory.
-
+* how to sftp
+	sftp -i privateKeyFilePath user@publicIP
+will connect user to remote machine using sftp
+pwd will show remote PWD
+lpwd will show local PWD
+simple put filename will move files from local PWD to remote PWD
 
 ## TMUX
 #### Start a new session
