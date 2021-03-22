@@ -9,6 +9,24 @@
 	+ find / -name fileorsearchstring*
 	+ pull quick manual
 	+ man command - will open manual
+
+connect to remote linux machine in using ssh (in windows)
+	+ ssh -i .keyFilePath username@publicIP
+
+e.g.
+	+ ssh -i C:\Users\....\ssh-personalORCL.key ubuntu@publicIP
+
+	+ sftp -i C:\Users\....\ssh-personalORCL.key ubuntu@publicIP
+	use get, put commands
+	pwd and lpwd to browse directories
+
+	+ Open a web server at current directory
+	python3 -m http.server 8000
+
+	+ Port forwarding command
+	ssh -i C:\Users\....\ssh-personalORCL.key ubuntu@publicIP -L 8000:localhost:8000
+
+
 * VIM
 	first install Plug.sh to autoupload directory using these commands
 	- curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
