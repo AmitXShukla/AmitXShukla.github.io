@@ -5,18 +5,24 @@ call plug#begin()
 	Plug 'neoclide/coc.nvim', {'branch': 'release'}
 	Plug 'frazrepo/vim-rainbow'
 	Plug 'lifepillar/vim-solarized8'
+	Plug 'junegunn/goyo.vim'
+	Plug 'junegunn/seoul256.vim'
 call plug#end()
 
 " colorscheme morning
 set background=light
-colorscheme solarized8
+" colorscheme solarized8_high
+colorscheme seoul256
 
 syntax on
 set spell spelllang=en_us
+set number
+set foldcolumn=5
+set wrap
+set statusline=...[%{&fo}]...
 
 let g:dfm_width = 80 "absolute width or percentage, like 0.7
 let g:dfm_height = 0.8
-
 let s:dfm_enabled = 0
 
 function! ToggleDistractionFreeMode()
