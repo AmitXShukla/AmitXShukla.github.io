@@ -17,8 +17,8 @@ Please visit this blog [Debian Linux VM](https://amit-shukla.medium.com/how-to-i
 
 ## Installing | Upgrading VIM to VIM 9.0
 
-`# vim comes pre-installed with most of Linux VMs
+#### vim comes pre-installed with most of Linux VMs
 
-# still, let's check vim version
+still, let's check vim version
 
-$ vim -version`
+`$ vim -version`
