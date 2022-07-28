@@ -16,4 +16,4 @@ These notebooks demonstrate, how to use VIM for JavaScript, HTML, TypeScript, An
 Before we proceed with these tutorials, I assume you have a Linux machine, remote or locally available.
 Please go through this blog, In case you want to setup a virtual Debian Buster 10 or Ubuntu virtual machines.
 
-[Debian Linux VM]("https://amit-shukla.medium.com/how-to-install-debian-10-buster-or-ubuntu-18-19-desktop-on-google-cloud-and-access-through-vnc-687c05d0d263")
+[Debian Linux VM](https://amit-shukla.medium.com/how-to-install-debian-10-buster-or-ubuntu-18-19-desktop-on-google-cloud-and-access-through-vnc-687c05d0d263)
