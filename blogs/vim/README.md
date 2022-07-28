@@ -43,7 +43,8 @@ vim comes pre-installed with most of Linux VMs, let's check vim version
 First, let's learn VIM modes,
 Command mode lets user do file/text operations, while Input mode is solely for writing text/content in file.
 
-` press key << i >> to enter input mode press key << Esc > to switch to command mode`
+	press key << i >> to enter input mode
+	press key << Esc > to switch to command mode
 
 ---
 
