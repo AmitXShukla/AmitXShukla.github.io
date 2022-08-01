@@ -3,13 +3,13 @@
 This tutorial helps user setup vim, tmux as a complete IDE, which can be used for remote development
 for JavaScript, HTML, TypeScript, Angular, Flutter, Julia and Python language.
 
-!!! Plus side of connecting to your remote computer via vscode is, vscode automatically export PORTs, while you have to do that manually in Linux shell or auto setup. (assuming you know what ports you open all the time.)
-!!! downside is, << Ctrl + f >> or << Ctrl + d >> like keybinding, open vscode find command instead of "vim page forward".
+    Plus side of connecting to your remote computer via vscode is, vscode automatically export PORTs, while you have to do that manually in Linux shell or auto setup. (assuming you know what ports you open all the time.)
+    downside is, << Ctrl + f >> or << Ctrl + d >> like keybinding on VIM, open vscode find command instead of "vim page forward", you can overwrite vscode keybindings but it could be a hassle.
 
 ## Why VIM 9.0?
 
-    1. one of fastest IDE (like church of emacs)
-    2. remote development using in-expensive mobile devices
+    1. one of fastest IDE (like emacs)
+    2. remote development
     3. addiction
     4. 10-100 times faster command execution in VIM Script 9.0
 
@@ -41,7 +41,7 @@ At present, apt package repository still referes to VIM8.1, so, ` $ sudo apt-get
 Instead, users, should fork a ppa repository for now and install it from ppa.
 ` $ sudo add-apt-repository ppa:jonathonf/vim`
 
-then after, try running `sudo apt install vim`
+then after, try running ` $ sudo apt install vim`
 
 ` $ vim -version`
 
@@ -49,22 +49,25 @@ you should have latest vim 9.0 version installed.
 
 ## instantiating an existing VIM setup
 
-vim comes preinstalled with most of the Linux distributions, and user can find vim
+vim comes pre-installed with most of the Linux distributions, and user can find vim
 executables at
 
 ` $ cd ~/usr/share $ ls -la vim*`
 
 you will also notice default vimrc, vimrc.tiny configurations.
+take a moment to read through content if you wish to know vim internals.
 
-User is support to first create their own default .vimrc file, which keeps user
-configurations.
+User is suppose to first create their own default .vimrc file, which keeps user
+specific configurations.
 
-so, now let's browse to user's home directory and then create a .vimrc file.
+so, now let's browse to user's home directory and create a .vimrc file.
 
 `$ cd $home $ touch .vimrc`
 
 you can copy existing configurations to this file and restart vim, your vim will
 load new configurations.
+[Click
+here](https://github.com/AmitXShukla/AmitXShukla.github.io/blob/master/tmp/test.vimrc) to find an working .vimrrc file.
 
 ## what's new in VIM 9.0
 
@@ -84,10 +87,11 @@ Command mode lets user do file/text operations, while Input mode is solely for w
 
 I encourage you to please be patient and spend one to two hours every day for next 2 days using/practicing these commands.
 
-_Once you get your hands on to these commands, trust me, I guarentee you, you will never go back to using mouse and other key bindings._
+Once you get your hands on to these commands, trust me, I guarentee you, you will never go back to using mouse and other key bindings.
 
 - Rule #1 - Stop using Arrow & Page keys on your keyboard and absoluletly no mouse.
 - Rule #2 - take a moment to learn these words
+
   - (#)count | command - e.g. 10d, 14h etc.
   - (a)ppend
   - (b)ack
@@ -121,21 +125,25 @@ _Once you get your hands on to these commands, trust me, I guarentee you, you wi
   - (\*) match any previous char
   - (.\*) match any char
   - ()) ( | ) end or start of sentance
-- Rule #3 - put your right hand index finger on key - j and middle finger on key - k
-  next put your left hand ring finger close to Esc key on your keyboard.  
-   next memorize these keys to move up/down in text (Left Up Down Right) = h j k l (j
-  key moves down and k moves up, h & l will be intuitive. You can chaneg these setting
-  later (however not recommended at all). Anytime is when a new file is open, first
-  movement is literally downward, and your << j >> key has bump for a reason, this
+
+- Rule #3 - put your right hand index finger on key << j >> and middle finger on key << k >>
+  next put your left hand ring finger close to << Esc >> key on your keyboard.  
+   next memorize these keys to move up/down in text (Left Up Down Right) = h j k l
+  << j >> key moves down and << k >> moves up, h & l will be intuitive. You can change these settings
+  later (however not recommended at all).
+
+  Anytime is when a new file is opened, first
+  movement is literally downwards, and this is why, your << j >> key has bump for a reason, this
   little bump on your j key helps you feel and locate << j >> key without looking at
   your keyboard.
-- Rule #4 - small moves are performes using letter keys, for example, like hjkl,
+
+- Rule #4 - small moves are performed using letter keys, for example, like hjkl,
   moves you one character at a time, for bigger moves, you will need to press Ctr or
   Shift keys. for example, << Ctrl + D >> or << Ctrl + u >> helps you moved page down or up.
   I assume, you familiazied yourself with these words, now, let's use these words to move in VIM.
 
-`$ vi << filename >>`
-Note - vi without file nae option, vi will open a new file
+` $ vi << filename >>`
+Note - vi without file name option, vi will open a new file
 
 Let's take a minute to understand VIM interface.
 menu bar is at top, how the tabs going to look like and how you screen will look like, if you split window in different grids
@@ -148,25 +156,26 @@ as I mentioned before, there is command mode and Input mode.
 toggle between << i >> and << Esc >> will let user switch between VIM commands, input modes.
 in your command mode, start typing these commands and learn to move through text using above vocubalary.
 
-:help vim-script-info
-:help functions
-:help function-list
-:help vim9
-vim help
-vim find command
+- :help vim-script-info
+- :help functions
+- :help function-list
+- :help vim9
+- :help
+- :help find
 
 https://vimhelp.org/vim9.txt.html
+
 running a VIM Script file
-:source /full/path/to/the/scriptfile.vim
+` $ :source /full/path/to/the/scriptfile.vim`
 
 ## learn file commands
 
-:w write buffer to file
-:q quit buffer
-:wq write & quit | ZZ is same as :wq
-:q! quit without writing
-:sh run shell commands
-:mksession
+- :w write buffer to file
+- :q quit buffer
+- :wq write & quit | ZZ is same as :wq
+- :q! quit without writing
+- :sh run shell commands
+- :mksession
 
 ## multiple buffers
 
