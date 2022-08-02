@@ -69,11 +69,11 @@ load new configurations.
 
 - [sample .vimrc](https://github.com/AmitXShukla/AmitXShukla.github.io/blob/master/blogs/vim/test.vimrc)
 - [vi cheatsheet](https://github.com/AmitXShukla/AmitXShukla.github.io/blob/master/blogs/vim/vi_cheat_sheet.pdf)
-- [tmux cheatsheet](https://github.com/AmitXShukla/AmitXShukla.github.io/blob/master/blogs/vim/tmux_cheat_sheet.pdf)
+- [tmux cheatsheet](https://github.com/AmitXShukla/AmitXShukla.github.io/blob/master/blogs/vim/tmux_cheatsheet.pdf)
 
 ## what's new in VIM 9.0
 
-[README_VIM9.md](https://github.com/vim/vim/blob/master/README_VIM9.md)
+[README VIM9.md](https://github.com/vim/vim/blob/master/README_VIM9.md)
 
 ---
 
@@ -91,8 +91,8 @@ I encourage you to please be patient and spend one to two hours every day for ne
 
 Once you get your hands on to these commands, trust me, I guarentee you, you will never go back to using mouse and other key bindings.
 
-- Rule #1 - Stop using Arrow & Page keys on your keyboard and absoluletly no mouse.
-- Rule #2 - take a moment to learn these words
+- **Rule #1** - Stop using Arrow & Page keys on your keyboard and absoluletly no mouse.
+- **Rule #2** - take a moment to learn these words
 
   - (#)count | command - e.g. 10d, 14h etc.
   - (a)ppend
@@ -128,7 +128,7 @@ Once you get your hands on to these commands, trust me, I guarentee you, you wil
   - (.\*) match any char
   - ()) ( | ) end or start of sentance
 
-- Rule #3 - put your right hand index finger on key << j >> and middle finger on key << k >>
+- **Rule #3** - put your right hand index finger on key << j >> and middle finger on key << k >>
   next put your left hand ring finger close to << Esc >> key on your keyboard.  
    next memorize these keys to move up/down in text (Left Up Down Right) = h j k l
   << j >> key moves down and << k >> moves up, h & l will be intuitive. You can change these settings
@@ -139,7 +139,7 @@ Once you get your hands on to these commands, trust me, I guarentee you, you wil
   little bump on your j key helps you feel and locate << j >> key without looking at
   your keyboard.
 
-- Rule #4 - small moves are performed using letter keys, for example, like hjkl,
+- **Rule #4** - small moves are performed using letter keys, for example, like hjkl,
   moves you one character at a time, for bigger moves, you will need to press Ctr or
   Shift keys. for example, << Ctrl + D >> or << Ctrl + u >> helps you moved page down or up.
   I assume, you familiazied yourself with these words, now, let's use these words to move in VIM.
@@ -227,7 +227,7 @@ just focus on, how to move your cursor in text.
 
 - a | append will change from << command >> to << input >> mode and then, will move your cursor to next character for writing
 - i | will change from << command >> to << input >> mode and then, will move your cursor to the character for writing
-- o | Open a new line below cursor
+- o |pen a new line below cursor
 - O | Open a new line above cursor
 - cw | change word
 - cc | change one character
@@ -260,11 +260,42 @@ command mode using << Esc >> is very inconvenient in that case.
 
 ## cut copy paste
 
+- yy or Y | Yank (copy) line to buffer
+- dd | delete & copy line to buffer
+- yw | yand word to buffer
+- p | paste copied text to buffer after cursor (next line)
+- P | paste copied text to buffer before cursor (previous line)
+
 ## visual copy paste
+
+- V or Shift + v | start visual selection, then use keys to select & copy text to
+  buffer
+- J | join lines
 
 ## find & replace
 
+- /text | this command starts search for << text >> in current buffer
+- use n | N to move next, previous in buffer
+- /tex\* | this command starts search for all texts starting with << tex >> in current buffer
+
 ## multiple edits
+
+- **search & replace commands**
+- :[address]s/old_text/new_text/
+
+- Address
+- . | Current line
+- n | Line number
+- .+m | Current line plus m lines
+- $ | last line
+- /string/ | A line that containts that string
+- % | entire file
+- [addr1],[addr2] | from address1 to address 2
+- **exmaple**
+- replace dog with cat starting from current line till next 15 lines
+- :./.+10s/cat/dog
+- replace cat with dog in every occurance
+- %s/cat/dog/g
 
 ---
 
@@ -274,13 +305,96 @@ command mode using << Esc >> is very inconvenient in that case.
 
 ## TMUX configurations setup
 
+TMUX is a terminal multiplexer, which allows users to create multiple user workflow
+sessions across different terminals.
+Unlike VIM tabs or buffers, TMUX saves sessions and keep those running while user
+moves between different TMUX sessions.
+
 ## sessions
+
+- **Creating a new session **
+- tmux
+- tmux new
+- tmux new-session
+- tmux new -s << session_name >> | start a new tmux session with name as
+  session_name
+
+- **show all sessions**
+- tmux ls
+- tmux list-sessions
+
+- **killing an existing session**
+- tmux kill-ses -t << session_name >>
+- tmux kill-session -t << session_name >>
+- tmux kill-session -a | kill all sessions except current
+- tmux kill-session -a -t << session_name >> | kill all session access session_name
+
+- Ctrl + b + $ | rename a session
+- Ctrl + b + d | detach a session
+
+- **attaching to sessions**
+- tmux a
+- tmux at
+- tmux attach
+- tmux attach-session
+- tmux attach-session -t << session_name >> | attach to session_name
+
+- **moving between sessions**
+- Ctrl + b + w | session and window preview
+- Ctrl + b + ( | move to previous
+- Ctrl + b + ) | move to next
 
 ## windows
 
+- **moving between windows in a session**
+- first create a session
+- tmux new -s << session_name >> -n << window_name >>
+- Ctrl + b + c | create new window
+- Ctrl + b + , | rename current window
+- Ctrl + b + & | close current window
+- Ctrl + b + p | previous window
+- Ctrl + b + n | next window
+- Ctrl + b + 0...9 | move to window number 0..9
+- Ctrl + b + 1 | move to last active window
+
 ## buffers
 
+- **moving between panes/buffers in a window**
+- Ctrl + b + ; | toggle last active window
+- Ctrl + b + % | split buffer horizontal
+- Ctrl + b + " | split buffer vertical
+- Ctrl + b + { | move to left pane
+- Ctrl + b + } | move to right pane
+- Ctrl + b + x | close current pane
+
+## moving in buffer and copy mode
+
+- moving in buffer mostly honor VIM keybindings
+- **copy mode**
+- Ctrl + b + [ | enter copy mode
+- Ctrl + b + PgUp | enter copy mode & scroll page up
+- Spacebar | start selection
+- Esc | clear seletion
+- Enter | Copy selection
+- Ctrl + b + ] | Paste content of buffer
+- :capture-pane | copy entire contents of a pane to buffer
+
 ## Misc
+
+- :show-buffer
+- :capture-pane | copy entire contents of a pane to buffer
+- :list-buffers
+- :choose-buffer
+- :save-buffer buf.txt
+- :delete-buffer -b 1
+
+## TMUX set options
+
+- Ctrl + b + : | Enter command mode
+- :set -g OPTION | set OPTION for all windows
+- :set mound on
+- tmux list-keys or :list-keys
+- tmux info
 
 # 4. VIM Setup, Plugins setup
 
