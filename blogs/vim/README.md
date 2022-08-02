@@ -1,4 +1,4 @@
-# VIM as an IDE
+#VIM as an IDE
 
 This tutorial helps user setup vim, tmux as a complete IDE, which can be used for remote development
 for JavaScript, HTML, TypeScript, Angular, Flutter, Julia and Python language.
@@ -66,8 +66,10 @@ so, now let's browse to user's home directory and create a .vimrc file.
 
 you can copy existing configurations to this file and restart vim, your vim will
 load new configurations.
-[Click
-here](https://github.com/AmitXShukla/AmitXShukla.github.io/blob/master/tmp/test.vimrc) to find an working .vimrrc file.
+
+- [sample .vimrc](https://github.com/AmitXShukla/AmitXShukla.github.io/blob/master/blogs/vim/test.vimrc)
+- [vi cheatsheet](https://github.com/AmitXShukla/AmitXShukla.github.io/blob/master/blogs/vim/vi_cheat_sheet.pdf)
+- [tmux cheatsheet](https://github.com/AmitXShukla/AmitXShukla.github.io/blob/master/blogs/vim/tmux_cheat_sheet.pdf)
 
 ## what's new in VIM 9.0
 
@@ -110,7 +112,7 @@ Once you get your hands on to these commands, trust me, I guarentee you, you wil
   - (p)aste
   - (p)revious
   - (r)eplace
-  - (s)plit
+  - (s)plit | substitute
   - (t)ab
   - (u)ndo | up
   - (vs)vertical split
@@ -177,29 +179,92 @@ running a VIM Script file
 - :sh run shell commands
 - :mksession
 
+## learn to move - cursor
+
+for now, let's not worry about how this window, fonts and layout is looking, let's
+just focus on, how to move your cursor in text.
+
+- h
+- j
+- k
+- l
+- w
+- b
+- gg | G
+- 10j | 23k
+- 0
+- Ctrl + f | d | n | u
+- Shift + ^ | $ | v | m
+- [[]] ( ) { }
+
 ## multiple buffers
+
+- :sp | Ctrl + w, Ctrl + n
+- :vs | Ctrl + w, Ctrl + v
+- :sp | :vs << file >> | will open file in split buffer
+- moving in buffer - Ctrl + w, Ctrl + h | j | k | l
 
 ## multiple tabs
 
+- :help tab-page-intro
+- vi -p file1 file2 file3 | this commmand will open three files, default is up to 10
+  files, default can be changed in .vimrc file - set tabpagemax=15
+- :tabnew | this command will open a new file in a new tab
+- :tabedit file1 | this command will open file1 in a new tab
+- :tabs | :tabsfund will show all open tabs or find a particular tab
+- .vimrc tip | set showtabline=2 to make tab bar visible all the time
+- :tabfirst | tabnext | tabprevious | tablast will move your cursor between tabs
+- :tabsclose | will close current tab
+- :tabm n | will move current tab to specified n position
+- :tabdo %s/foo/bar/g | Pro tip, changing some content in multiple tabs at once
+
 ## explorer
 
-Tree plugins will be covered later.
-
-## learn to move - cursor
-
-## learn to move - windows motion
+- :Ex will open an explorer buffer, use :q to quit
+  Tree plugins will be covered later.
 
 ## learn to change
 
+- a | append will change from << command >> to << input >> mode and then, will move your cursor to next character for writing
+- i | will change from << command >> to << input >> mode and then, will move your cursor to the character for writing
+- o | Open a new line below cursor
+- O | Open a new line above cursor
+- cw | change word
+- cc | change one character
+- rc | change/replace one character
+- c$ | change to the end of line
+- s | substitute one character with string
+- S | substitute Rest of live with text
+- . | repeat last change
+
+often while making changes, you may want to go back one character, changing back to
+command mode using << Esc >> is very inconvenient in that case.
+
+- Ctrl + h | move one character back while in << insert >> mode
+- Ctrl + w | move one word back while in << insert >> mode
+- Ctrl + u | move back to beginning of insert while in << insert >> mode
+
 ## undo
 
+- u | undo last change
+- U | undo all changes on line
+
 ## delete
+
+- dd | delete entire (or 3 lines when 3dd)
+- dw | delete word
+- d3w | delete 3 words
+- d) | D - delete to end of line
+- db | delete one word back
+- x | delete one character
 
 ## cut copy paste
 
 ## visual copy paste
 
 ## find & replace
+
+## multiple edits
 
 ---
 
