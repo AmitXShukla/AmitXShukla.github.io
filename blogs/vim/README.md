@@ -101,7 +101,7 @@ Once you get your hands on to these commands, trust me, I guarentee you, you wil
   - (d)elete | down
   - (e)xplorer | end
   - (f)orward | find
-  - (g)oto | (G)
+  - (g)oto | (G) | [[ | ]]
   - (h)elp
   - (i)nsert
   - (J)oin
