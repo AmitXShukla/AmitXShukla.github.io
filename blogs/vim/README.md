@@ -398,6 +398,67 @@ moves between different TMUX sessions.
 
 # 4. VIM Setup, Plugins setup
 
+first we will setup default vim settings,
+if not done already, please create a .vimrc file in user home directory.
+
+- $ cd $home
+- touch .vimrc
+- vim .vimrc
+
+- **set default vim settings**
+- set number
+- set relativenumber
+- set nocompatible
+- syntax on
+- set shiftwidth=4
+- set scrolloff=10
+- set wrap
+- set history=1000
+- set showmode
+- set showmatch
+- set tw=84
+- set ts=4
+- set sts=4
+- set term=xterm-256color
+- set bg=dark
+- set spell spelllang=en_us
+- set foldcolumn=1
+- set statusline=...[%{&fo}]...
+- set laststatus=2 "this setting is for lightline plugin
+
+## working with plugins
+
+We can manually install plugins, however, let's use a plugin manager to manage
+plugins, we will use vim-plugin
+
+Below command will download plug.vim inside .vim directory
+
+- curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+- https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+`
+call plug#begin()
+
+	Plug 'lifepillar/vim-solarized8'
+	Plug 'preservim/NERDTree'
+	Plug 'prettier/vim-prettier', {
+		\ 'do': 'yarn install --frozen-lockfile --production',
+		\ 'branch': 'release/0.x'
+		\ }
+	Plug 'itchyny/lightline.vim'
+"	Plug 'neoclide/coc.nvim', {'branch': 'release'}
+	Plug 'frazrepo/vim-rainbow'
+	Plug 'junegunn/goyo.vim'
+
+call plug#end()
+`
+
+- colorscheme solarized8
+- map <silent> <C-D> :NERDTreeToggle<CR>
+- let g:rainbow_active=1 " rainbow plugin activate globally
+- :Goyo  | Goyo plugin allows you to enter distraction free writing mode
+- :FZF activate fuzzyfinder in vim
+
 # 5. VIM for JavaScript, TypeScript, Angular, HTML
 
 # 6. VIM for Flutter development
