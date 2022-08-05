@@ -49,7 +49,7 @@ $ sudo add-apt-repository ppa:jonathonf/vim
 
 Then after, try running 
 
-```vim    
+```sh
 $ sudo apt install vim
 $ vim -version
 ```
@@ -61,7 +61,9 @@ You should have latest vim 9.0 version installed now.
 VIM comes pre-installed with most of the Linux distributions, and user can find vim
 binaries at
 
-    $ cd ~/usr/share $ ls -la vim*
+```sh
+$ cd ~/usr/share $ ls -la vim*
+```
 
 You will also notice default vimrc, vimrc.tiny configurations.
 take a moment to read through content if you wish to know vim internals.
