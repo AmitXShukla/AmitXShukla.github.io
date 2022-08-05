@@ -67,14 +67,17 @@ $ ls -la vim*
 ```
 
 You will also notice default vimrc, vimrc.tiny configurations.
-take a moment to read through content if you wish to know vim internals.
+
+Take a moment to read through content if you wish to know vim internals.
 
 User is suppose to first create their own default .vimrc file, which keeps user
 specific configurations.
 
-    # Let's browse to user's home directory and create a .vimrc file.
-    $ cd $home
-    $ touch .vimrc
+```sh
+# Let's browse to user's home directory and create a .vimrc file
+$ cd $home
+$ touch .vimrc
+```
 
 You can copy existing configurations to this file and restart vim, your vim will
 load new configurations.
@@ -94,8 +97,10 @@ load new configurations.
 First, let's learn VIM modes,
 Command mode lets user do file/text operations, while Input mode is solely for writing text/content in file.
 
-    press key << i >> to enter input mode
-    press key << Esc > to switch to command mode
+```html
+press key << i >> to enter input mode
+press key << Esc > to switch to command mode
+```
 
 ## let's first understand few basics before we start learning VIM.
 
