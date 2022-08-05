@@ -36,8 +36,10 @@ $ vim -version
 
 At present, apt package repository still refers to VIM8.1.
 
-    # will install older version of VIM
-    $ sudo apt-get install
+```sh
+# will install older version of VIM
+$ sudo apt-get install
+```
 
 Instead, users should fork a ppa repository for now and install it from ppa.
 
