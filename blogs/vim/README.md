@@ -441,7 +441,6 @@ Below command will download plug.vim inside .vim directory
 
 `
 call plug#begin()
-
 	Plug 'lifepillar/vim-solarized8'
 	Plug 'preservim/NERDTree'
 	Plug 'prettier/vim-prettier', {
@@ -451,7 +450,6 @@ call plug#begin()
 	Plug 'itchyny/lightline.vim'
 	Plug 'frazrepo/vim-rainbow'
 	Plug 'junegunn/goyo.vim'
-
 call plug#end()
 `
 
@@ -494,8 +492,7 @@ For Example -
 # 5. VIM as IDE for HTML, CSS, Angular, Flutter, Julia & Python
 We will use emmet plugin for HTML code.
 
-`
-- add this Plug to your .vimrc Plug in code
+`- add this Plug to your .vimrc Plug in code
 - Plug 'mattn/emmet-vim'
 - :PlugInstall
 - create a new HTML file
@@ -509,8 +506,7 @@ We will use emmet plugin for HTML code.
 - let g:user_emmet_install_global = 0
 - autocmd FileType html,css EmmetInstall
 - if you want to re-map << Ctrl y >> key to << Ctrl z >> 
-- let g:user_emmet_leader_key='<C-Z>'
-`
+- let g:user_emmet_leader_key='<C-Z>'`
 
 emmet-vim is very flexible plugin and allow users to create/update their own
 snippets, for complete documentation, please visit [this
