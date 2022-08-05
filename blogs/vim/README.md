@@ -49,7 +49,7 @@ You should have latest vim 9.0 version installed.
 ## instantiating an existing VIM setup
 
 VIM comes pre-installed with most of the Linux distributions, and user can find vim
-executables at
+binaries at
 
 `$ cd ~/usr/share $ ls -la vim*`
 
@@ -61,7 +61,10 @@ specific configurations.
 
 Let's browse to user's home directory and create a .vimrc file.
 
-`$ cd $home $ touch .vimrc`
+`
+- $ cd $home
+- $ touch .vimrc
+`
 
 You can copy existing configurations to this file and restart vim, your vim will
 load new configurations.
@@ -488,7 +491,31 @@ For Example -
 - :registers p | this command will show macros definitions you just created
 
 # 5. VIM as IDE for HTML, CSS, Angular, Flutter, Julia & Python
+We will use emmet plugin for HTML code.
 
+`
+- add this Plug to your .vimrc Plug in code
+- Plug 'mattn/emmet-vim'
+- :PlugInstall
+- create a new HTML file
+- vim index.html
+- << _ >> is the cursor position
+- type << html:5_ >>
+- hit <Ctrl y , >>
+
+- by default, emmet plugin is enabled in all modes, it's good idea is to restrict
+  this plugin to only HTML, CSS files.
+- add following code to your .vimrc file
+- let g:user_emmet_install_global = 0
+- autocmd FileType html,css EmmetInstall
+
+- if you want to re-map << Ctrl y >> key to << Ctrl z >> 
+- let g:user_emmet_leader_key='<C-Z>'
+
+emmet-vim is very flexible plugin and allow users to create/update their own
+snippets, for complete documentation, please visit [this
+link](https://github.com/mattn/emmet-vim).
+`
 ## VIM for HTML, CSS
 ## VIM for JavaScript, TypeScript, Angular
 
