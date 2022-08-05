@@ -449,12 +449,13 @@ call plug#begin()
 		\ 'branch': 'release/0.x'
 		\ }
 	Plug 'itchyny/lightline.vim'
-"	Plug 'neoclide/coc.nvim', {'branch': 'release'}
 	Plug 'frazrepo/vim-rainbow'
 	Plug 'junegunn/goyo.vim'
 
 call plug#end()
 `
+
+"	Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 - colorscheme solarized8
 - map <silent> <C-D> :NERDTreeToggle<CR>
@@ -502,20 +503,19 @@ We will use emmet plugin for HTML code.
 - << _ >> is the cursor position
 - type << html:5_ >>
 - hit <Ctrl y , >>
-
 - by default, emmet plugin is enabled in all modes, it's good idea is to restrict
   this plugin to only HTML, CSS files.
 - add following code to your .vimrc file
 - let g:user_emmet_install_global = 0
 - autocmd FileType html,css EmmetInstall
-
 - if you want to re-map << Ctrl y >> key to << Ctrl z >> 
 - let g:user_emmet_leader_key='<C-Z>'
+`
 
 emmet-vim is very flexible plugin and allow users to create/update their own
 snippets, for complete documentation, please visit [this
 link](https://github.com/mattn/emmet-vim).
-`
+
 ## VIM for HTML, CSS
 ## VIM for JavaScript, TypeScript, Angular
 
