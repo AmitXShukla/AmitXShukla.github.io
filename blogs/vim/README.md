@@ -62,7 +62,8 @@ VIM comes pre-installed with most of the Linux distributions, and user can find 
 binaries at
 
 ```sh
-$ cd ~/usr/share $ ls -la vim*
+$ cd ~/usr/share 
+$ ls -la vim*
 ```
 
 You will also notice default vimrc, vimrc.tiny configurations.
