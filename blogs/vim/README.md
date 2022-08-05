@@ -28,7 +28,9 @@ Please visit this blog [Debian Linux VM](https://amit-shukla.medium.com/how-to-i
 
 VIM comes pre-installed with most of Linux VMs, let's check vim version
 
-    $ vim -version
+```sh
+$ vim -version
+```
 
 ## upgrading to VIM 9.0
 
