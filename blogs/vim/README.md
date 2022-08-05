@@ -3,9 +3,6 @@
 This tutorial helps user setup vim, tmux as a complete IDE, which can be used for remote development
 for JavaScript, HTML, TypeScript, Angular, Flutter, Julia and Python language.
 
-    Plus side of connecting to your remote computer via vscode is, vscode automatically export PORTs, while you have to do that manually in Linux shell or auto setup. (assuming you know what ports you open all the time.)
-    downside is, << Ctrl + f >> or << Ctrl + d >> like keybinding on VIM, open vscode find command instead of "vim page forward", you can overwrite vscode keybindings but it could be a hassle.
-
 ## Why VIM 9.0?
 
     1. one of fastest IDE (like emacs)
@@ -19,52 +16,54 @@ for JavaScript, HTML, TypeScript, Angular, Flutter, Julia and Python language.
     2. moving in VIM
     3. everything TMUX
     4. VIM setup & Plugins, Macros
-    5. VIM for JavaScript, TypeScript, Angular, HTML
-    6. VIM for Flutter development
-    7. VIM for Julia, Python
+    5. VIM for HTML, CSS, JavaScript, TypeScript, Angular, NODEJS, Flutter, Julia &
+	   Python
 
 Before we proceed with these tutorials, I assume you have a Linux machine, remote or locally available.
 Please visit this blog [Debian Linux VM](https://amit-shukla.medium.com/how-to-install-debian-10-buster-or-ubuntu-18-19-desktop-on-google-cloud-and-access-through-vnc-687c05d0d263) In case you want to setup a new virtual Debian Buster 10 or Ubuntu virtual machine.
 
 ---
 
-# 1. installing | upgrading VIM to VIM 9.0
+# 1. Installing | upgrading VIM to VIM 9.0
 
-vim comes pre-installed with most of Linux VMs, let's check vim version
+VIM comes pre-installed with most of Linux VMs, let's check vim version
 
-` $ vim -version`
+`$ vim -version`
 
 ## upgrading to VIM 9.0
 
-At present, apt package repository still referes to VIM8.1, so, ` $ sudo apt-get install` will install older version of VIM.
+At present, apt package repository still refers to VIM8.1.
 
-Instead, users, should fork a ppa repository for now and install it from ppa.
-` $ sudo add-apt-repository ppa:jonathonf/vim`
+`$ sudo apt-get install` will install older version of VIM.
 
-then after, try running ` $ sudo apt install vim`
+Instead, users should fork a ppa repository for now and install it from ppa.
 
-` $ vim -version`
+`$ sudo add-apt-repository ppa:jonathonf/vim`
 
-you should have latest vim 9.0 version installed.
+Then after, try running ` $ sudo apt install vim`
+
+`$ vim -version`
+
+You should have latest vim 9.0 version installed.
 
 ## instantiating an existing VIM setup
 
-vim comes pre-installed with most of the Linux distributions, and user can find vim
+VIM comes pre-installed with most of the Linux distributions, and user can find vim
 executables at
 
-` $ cd ~/usr/share $ ls -la vim*`
+`$ cd ~/usr/share $ ls -la vim*`
 
-you will also notice default vimrc, vimrc.tiny configurations.
+You will also notice default vimrc, vimrc.tiny configurations.
 take a moment to read through content if you wish to know vim internals.
 
 User is suppose to first create their own default .vimrc file, which keeps user
 specific configurations.
 
-so, now let's browse to user's home directory and create a .vimrc file.
+Let's browse to user's home directory and create a .vimrc file.
 
 `$ cd $home $ touch .vimrc`
 
-you can copy existing configurations to this file and restart vim, your vim will
+You can copy existing configurations to this file and restart vim, your vim will
 load new configurations.
 
 - [sample .vimrc](https://github.com/AmitXShukla/AmitXShukla.github.io/blob/master/blogs/vim/test.vimrc)
@@ -77,7 +76,7 @@ load new configurations.
 
 ---
 
-# 2. moving in VIM
+# 2. Moving in VIM
 
 First, let's learn VIM modes,
 Command mode lets user do file/text operations, while Input mode is solely for writing text/content in file.
@@ -89,9 +88,9 @@ Command mode lets user do file/text operations, while Input mode is solely for w
 
 I encourage you to please be patient and spend one to two hours every day for next 2 days using/practicing these commands.
 
-Once you get your hands on to these commands, trust me, I guarentee you, you will never go back to using mouse and other key bindings.
+Once you get your hands on to these commands, trust me, I guarantee you, you will never go back to using mouse and other key bindings.
 
-- **Rule #1** - Stop using Arrow & Page keys on your keyboard and absoluletly no mouse.
+- **Rule #1** - Stop using Arrow & Page keys on your keyboard and absolutely no mouse.
 - **Rule #2** - take a moment to learn these words
 
   - (#)count | command - e.g. 10d, 14h etc.
@@ -126,7 +125,7 @@ Once you get your hands on to these commands, trust me, I guarentee you, you wil
   - (.) match single char
   - (\*) match any previous char
   - (.\*) match any char
-  - ()) ( | ) end or start of sentance
+  - ()) ( | ) end or start of sentence
 
 - **Rule #3** - put your right hand index finger on key << j >> and middle finger on key << k >>
   next put your left hand ring finger close to << Esc >> key on your keyboard.  
@@ -142,7 +141,7 @@ Once you get your hands on to these commands, trust me, I guarentee you, you wil
 - **Rule #4** - small moves are performed using letter keys, for example, like hjkl,
   moves you one character at a time, for bigger moves, you will need to press Ctr or
   Shift keys. for example, << Ctrl + D >> or << Ctrl + u >> helps you moved page down or up.
-  I assume, you familiazied yourself with these words, now, let's use these words to move in VIM.
+  I assume, you familiarized yourself with these words, now, let's use these words to move in VIM.
 
 ` $ vi << filename >>`
 Note - vi without file name option, vi will open a new file
@@ -152,11 +151,11 @@ menu bar is at top, how the tabs going to look like and how you screen will look
 and each grid has one file (let's call it a buffer).
 then having a bottom command bar, which shows you file and other information.
 
-now, let's jump right into now,
+let's jump right into now,
 
-as I mentioned before, there is command mode and Input mode.
+As I mentioned before, there is command mode and Input mode.
 toggle between << i >> and << Esc >> will let user switch between VIM commands, input modes.
-in your command mode, start typing these commands and learn to move through text using above vocubalary.
+in your command mode, start typing these commands and learn to move through text using above vocabulary.
 
 - :help vim-script-info
 - :help functions
@@ -167,7 +166,7 @@ in your command mode, start typing these commands and learn to move through text
 
 https://vimhelp.org/vim9.txt.html
 
-running a VIM Script file
+Executing a VIM Script file
 ` $ :source /full/path/to/the/scriptfile.vim`
 
 ## learn file commands
@@ -208,7 +207,7 @@ just focus on, how to move your cursor in text.
 ## multiple tabs
 
 - :help tab-page-intro
-- vi -p file1 file2 file3 | this commmand will open three files, default is up to 10
+- vi -p file1 file2 file3 | this command will open three files, default is up to 10
   files, default can be changed in .vimrc file - set tabpagemax=15
 - :tabnew | this command will open a new file in a new tab
 - :tabedit file1 | this command will open file1 in a new tab
@@ -238,7 +237,7 @@ just focus on, how to move your cursor in text.
 - S | substitute Rest of live with text
 - . | repeat last change
 
-often while making changes, you may want to go back one character, changing back to
+Often while making changes, you may want to go back one character, changing back to
 command mode using << Esc >> is very inconvenient in that case.
 
 - Ctrl + h | move one character back while in << insert >> mode
@@ -263,7 +262,7 @@ command mode using << Esc >> is very inconvenient in that case.
 
 - yy or Y | Yank (copy) line to buffer
 - dd | delete & copy line to buffer
-- yw | yand word to buffer
+- yw | yank word to buffer
 - p | paste copied text to buffer after cursor (next line)
 - P | paste copied text to buffer before cursor (previous line)
 
@@ -289,18 +288,18 @@ command mode using << Esc >> is very inconvenient in that case.
 - n | Line number
 - .+m | Current line plus m lines
 - $ | last line
-- /string/ | A line that containts that string
+- /string/ | A line that contains that string
 - % | entire file
-- [addr1],[addr2] | from address1 to address 2
-- **exmaple**
+- [addr1],[addr2] | from address 1 to address 2
+- **example**
 - replace dog with cat starting from current line till next 15 lines
 - :./.+10s/cat/dog
-- replace cat with dog in every occurance
+- replace cat with dog in every occurrence
 - %s/cat/dog/g
 
 ---
 
-# 3. everything in TMUX
+# 3. Everything in TMUX
 
 `$ sudo apt install tmux`
 
@@ -399,7 +398,7 @@ moves between different TMUX sessions.
 
 # 4. VIM Setup, Plugins & Macros
 
-first we will setup default vim settings,
+First we will setup default vim settings,
 if not done already, please create a .vimrc file in user home directory.
 
 - $ cd $home
