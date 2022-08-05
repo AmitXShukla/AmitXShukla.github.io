@@ -456,13 +456,12 @@ call plug#end()
 
 - colorscheme solarized8
 - map <silent> <C-D> :NERDTreeToggle<CR>
-- let g:rainbow_active=1 " rainbow plugin activate globally
+- let g:rainbow_active=1 | rainbow plugin activate globally
 - :Goyo  | Goyo plugin allows you to enter distraction free writing mode
-- :FZF activate fuzzyfinder in vim
+- :FZF | activate fuzzyfinder in vim
 
 ## working with VIM Macros
-VIM allows users to easily create and use macros across files.
-VIM macros allow users to automate certain tasks automatically.
+VIM allows users to easily create and use macros across files to automate certain tasks automatically.
 
 For Example - 
 
@@ -472,14 +471,14 @@ For Example -
   dependencies.
 
 `
-import numpy as np
-import pandas as pd
-import matplotlib as mpl
-import matplotlib.pyplot as plt
-%matplotlib inline
-import seaborn as sns
+- import numpy as np
+- import" pandas as pd
+- import" matplotlib as mpl
+- import" matplotlib.pyplot as plt
+- %matplotlib inline
+- import" seaborn as sns
 `
-- let open a blank vim file
+- open a blank vim file
 - press << q >> followed by a letter << p >> | this will create a vim macro @p
 - press << i >> to enter into insert mode
 - type all lines which you want to include
@@ -489,8 +488,11 @@ import seaborn as sns
 
 - :registers p | this command will show macros definitions you just created
 
-# 5. VIM for JavaScript, TypeScript, Angular, HTML
+# 5. VIM as IDE for HTML, CSS, Angular, Flutter, Julia & Python
 
-# 6. VIM for Flutter development
+## VIM for HTML, CSS
+## VIM for JavaScript, TypeScript, Angular
 
-# 7. VIM for Julia, Python
+## VIM for Flutter development
+
+## VIM for Julia, Python
