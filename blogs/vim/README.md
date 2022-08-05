@@ -43,12 +43,16 @@ $ sudo apt-get install
 
 Instead, users should fork a ppa repository for now and install it from ppa.
 
-    $ sudo add-apt-repository ppa:jonathonf/vim
+```sh
+$ sudo add-apt-repository ppa:jonathonf/vim
+```
 
 Then after, try running 
-    
-    $ sudo apt install vim
-    $ vim -version
+
+```vim    
+$ sudo apt install vim
+$ vim -version
+```
 
 You should have latest vim 9.0 version installed now.
 
