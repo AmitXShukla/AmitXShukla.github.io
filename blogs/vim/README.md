@@ -1,4 +1,4 @@
-#VIM as an IDE
+# VIM as an IDE
 
 This tutorial helps user setup vim, tmux as a complete IDE, which can be used for remote development
 for JavaScript, HTML, TypeScript, Angular, Flutter, Julia and Python language.
@@ -177,11 +177,12 @@ running a VIM Script file
 - :wq write & quit | ZZ is same as :wq
 - :q! quit without writing
 - :sh run shell commands
-- :mksession
+- :mksession <<mksession_file_name>> 
+- :source <<mksession_file_name>> | vim -S <<mksession_file_name>> will open saved session
 
 ## learn to move - cursor
 
-for now, let's not worry about how this window, fonts and layout is looking, let's
+For now, let's not worry about how this window, fonts and layout is looking, let's
 just focus on, how to move your cursor in text.
 
 - h
@@ -396,7 +397,7 @@ moves between different TMUX sessions.
 - tmux list-keys or :list-keys
 - tmux info
 
-# 4. VIM Setup, Plugins setup
+# 4. VIM Setup, Plugins & Macros
 
 first we will setup default vim settings,
 if not done already, please create a .vimrc file in user home directory.
@@ -433,8 +434,8 @@ plugins, we will use vim-plugin
 
 Below command will download plug.vim inside .vim directory
 
-- curl -fLo ~/.vim/autoload/plug.vim --create-dirs
-- https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+- curl -fLo ~/.vim/autoload/plug.vim --create-dirs 
+ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 `
 call plug#begin()
@@ -458,6 +459,35 @@ call plug#end()
 - let g:rainbow_active=1 " rainbow plugin activate globally
 - :Goyo  | Goyo plugin allows you to enter distraction free writing mode
 - :FZF activate fuzzyfinder in vim
+
+## working with VIM Macros
+VIM allows users to easily create and use macros across files.
+VIM macros allow users to automate certain tasks automatically.
+
+For Example - 
+
+- while working with Julia or Python notebooks, often, developers want to
+  add/include dependencies in beginning of their notebook.
+- in this example, we will create a macro, which automatically includes all these
+  dependencies.
+
+`
+import numpy as np
+import pandas as pd
+import matplotlib as mpl
+import matplotlib.pyplot as plt
+%matplotlib inline
+import seaborn as sns
+`
+- let open a blank vim file
+- press << q >> followed by a letter << p >> | this will create a vim macro @p
+- press << i >> to enter into insert mode
+- type all lines which you want to include
+- press << q >> to stop recording
+- open a new test.py file in vim
+- call macro using command << @p >>
+
+- :registers p | this command will show macros definitions you just created
 
 # 5. VIM for JavaScript, TypeScript, Angular, HTML
 
