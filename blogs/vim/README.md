@@ -16,7 +16,7 @@ for JavaScript, HTML, TypeScript, Angular, Flutter, Julia and Python language.
     2. moving in VIM
     3. everything TMUX
     4. VIM setup & Plugins, Macros
-    5. VIM for HTML, CSS, JavaScript, TypeScript, Angular, NODEJS, Flutter, Julia &
+    5. VIM for HTML, CSS, Node JS, JavaScript, TypeScript, Angular, Flutter, Julia, 
 	   Python
 
 Before we proceed with these tutorials, I assume you have a Linux machine, remote or locally available.
@@ -602,7 +602,7 @@ vim index.html
 # hit <Ctrl y , >>
 ```
 
-by default, emmet plugin is enabled in all modes, it's good idea is to restrict
+By default, emmet plugin is enabled in all modes, it's good idea is to restrict
   this plugin to only HTML, CSS files.
 
 ```vim
@@ -616,10 +616,36 @@ let g:user_emmet_leader_key='<C-Z>'`
 ```
 
 emmet-vim is very flexible plugin and allow users to create/update their own
-snippets, for complete documentation, please visit [this
-link](https://github.com/mattn/emmet-vim).
+snippets, please visit [this
+link](https://github.com/mattn/emmet-vim)
+for complete documentation.
 
-## VIM for JavaScript, TypeScript, Angular
+## VIM for Node JS, JavaScript, TypeScript, Angular
+Most of the modern language facilitate code auto-completion through LSP (Language
+Server Protocol). We will use [CoC - Conquer of Completion](https://github.com/neoclide/coc.nvim) vim plugin to configure
+language servers for LSP support.
+
+- first make sure, you have node js installed on your computer.
+
+```sh
+$ sudo apt-get update
+
+# if curl package is not installed
+$ sudo apt-get install curl gnupg -y
+
+# nodejs version 18
+$ curl -sL https://deb.nodesource.com/setup_18.x | sudo -E bash -
+$ sudo apt-get install -y nodejs
+
+# check node and npm version
+$ node -v
+$ npm -v
+```
+
+```sh
+# install Angular
+$ npm install -g @angular/cli
+```
 
 ## VIM for Flutter development
 
