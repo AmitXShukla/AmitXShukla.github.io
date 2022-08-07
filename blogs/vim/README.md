@@ -626,6 +626,7 @@ Server Protocol). We will use [CoC - Conquer of Completion](https://github.com/n
 language servers for LSP support.
 
 - first make sure, you have node js installed on your computer.
+- Make sure to use vim >= 8.1.1719 or neovim >= 0.4.0.
 
 ```sh
 $ sudo apt-get update
@@ -635,6 +636,11 @@ $ sudo apt-get install curl gnupg -y
 
 # nodejs version 18
 $ curl -sL https://deb.nodesource.com/setup_18.x | sudo -E bash -
+
+# another alternate source to download NODE is
+$ curl -sL install-node.vercel.app/lts | bash
+
+# install nodejs
 $ sudo apt-get install -y nodejs
 
 # check node and npm version
@@ -647,6 +653,50 @@ $ npm -v
 $ npm install -g @angular/cli
 ```
 
+```sh
+# add coc vim plugin to your .vimrc file Begin Plug ... End
+# Use release branch (recommend)
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+# save your changes and restart vim
+$ vim ~/.vimrc
+$ :PlugInstall
+
+# above commands will setup up coc, and will save Language settings in
+coc-settings.json file
+# you can view contents of this file at
+
+$ vim ~/.config/nvim/coc-settings.json
+
+# or run CocConfig
+$ :CocConfig
+$ :CocInfo
+
+```
+
+## vim for web development, JSON, HTML, CSS, TypeScript
+
+```vim
+# for generic web-development consider
+$ :CocInstall coc-tsserver coc-json coc-html coc-css
+```
+
+## vim for Python, PHP 
+
+```vim
+# for Python3 
+$:CocInstall coc-pyright
+
+# for PHP
+$ :CocInstall coc-phpls
+```
+
 ## VIM for Flutter development
 
 ## VIM for Julia, Python
+
+```vim
+# for Python3 
+$:CocInstall coc-pyright
+```
+
