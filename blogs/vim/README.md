@@ -585,6 +585,40 @@ call macro using command << @p >>
 ```
 
 # 5. VIM as IDE for HTML, CSS, Angular, Flutter, Julia & Python
+Before we jump on to setting up VIM as an IDE for development, I want to list out
+few functionalities which makes a good code editor a great IDE.
+- jump to definitions/references
+- goto reference/object definitions
+- built-in terminal
+- a great debugger
+- linting
+- syntax check
+- language grammar recommendations # varName vs VarName
+- access to language help, manual / documentation
+- auto-complete
+- auto imports
+- multi edit
+- multi file edit # changing a variable or method names across files
+- snippets/macros
+- open browser
+- multi window / panes / tabs
+- great file explorer
+
+There are lots of such IDEs exist in market which provide most of these
+functionalities. For Example - emacs, XCode, Android Studio, VSCode, JetBrains IDEs
+etc.
+
+VIM on the other hand is greatest code editor, needs some work to be setup as an
+IDE.
+
+In following sections, I will setup my VIM to include most of these functionalities.
+ 
+
+One size doesn't fit all, this is why most of the code editor offer
+extensions/plugins for developers to work with their favorite programming language.
+
+Likewise, VIM offers plugin support and user may need to install difference
+extensions/plugins to support their workflow.
 
 ## VIM for HTML, CSS
 We will use emmet plugin for HTML code.
