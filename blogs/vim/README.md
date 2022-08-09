@@ -589,15 +589,18 @@ Before we jump on to setting up VIM as an IDE for development, I want to list ou
 few functionalities which makes a good code editor a great IDE.
 
 ```html
-- jump to definitions/references
-- goto reference/object definitions
 - built-in terminal
 - a great debugger
 - linting
 - syntax check
+- Go to definition
+- (auto)completion
+- Code Actions (automatic formatting, organize imports, ...)
+- Show method signatures
+- Show/go to references
+- Snippets
 - language grammar recommendations # varName vs VarName
 - access to language help, manual / documentation
-- auto-complete
 - auto imports
 - multi edit
 - multi file edit # changing a variable or method names across files
@@ -608,7 +611,7 @@ few functionalities which makes a good code editor a great IDE.
 ```
 
 There are lots of such IDEs exist in market which provide most of these
-functionalities. For Example - emacs, XCode, Android Studio, VSCode, JetBrains IDEs
+functionalities. For Example - `emacs, XCode, Android Studio, VSCode, JetBrains` IDEs
 etc.
 
 VIM on the other hand is greatest code editor, needs some work to be setup as an
@@ -622,6 +625,19 @@ extensions/plugins for developers to work with their favorite programming langua
 
 Likewise, VIM offers plugin support and user may need to install different
 extensions/plugins to support their workflow.
+
+`in below section, we will learn more about Microsoft LSP protocol and it's support
+for different code editor. This LSP protocol is responsible for making a code editor
+to a smart IDE.
+
+[link to MS
+LSP](https://microsoft.github.io/language-server-protocol/implementors/tools/)
+
+while, most of branded code editors comes prepackagaed with these extensions, and
+VIM, NeoVIM, emacs has to go through hassle of setting up these extensions.
+While this is hassle, but defintely worth learning and eventually outperforms other
+code editors.
+`
 
 ## VIM for HTML, CSS
 We will use emmet plugin for HTML code.
