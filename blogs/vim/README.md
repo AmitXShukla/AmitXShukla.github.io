@@ -628,16 +628,16 @@ extensions/plugins to support their workflow.
 
 `in below section, we will learn more about Microsoft LSP protocol and it's support
 for different code editor. This LSP protocol is responsible for making a code editor
-to a smart IDE.
+to a smart IDE.`
+`
 
 [link to MS
 LSP](https://microsoft.github.io/language-server-protocol/implementors/tools/)
 
-while, most of branded code editors comes prepackagaed with these extensions, and
+`while, most of branded code editors comes prepackagaed with these extensions, and
 VIM, NeoVIM, emacs has to go through hassle of setting up these extensions.
-While this is hassle, but defintely worth learning and eventually outperforms other
-code editors.
-`
+This is hassle is worth learning and eventually outperforms other
+code editors.`
 
 ## VIM for HTML, CSS
 We will use emmet plugin for HTML code.
