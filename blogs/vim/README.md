@@ -627,14 +627,14 @@ Likewise, VIM offers plugin support and user may need to install different
 extensions/plugins to support their workflow.
 
 `in below section, we will learn more about Microsoft LSP protocol and it's support
-for different code editor. This LSP protocol is responsible for making a code editor
+for different code editors. This LSP protocol is responsible for making a code editor
 to a smart IDE.`
 `
 
 [link to MS
 LSP](https://microsoft.github.io/language-server-protocol/implementors/tools/)
 
-`while, most of branded code editors comes prepackagaed with these extensions, and
+`while, most of branded code editors comes prepackaged with these extensions, and
 VIM, NeoVIM, emacs has to go through hassle of setting up these extensions.
 This is hassle is worth learning and eventually outperforms other
 code editors.`
@@ -660,7 +660,9 @@ By default, emmet plugin is enabled in all modes, it's good idea is to restrict
 
 ```vim
 # add following code to your .vimrc file
+let g:user_emmet_mode='n'    "only enable normal mode functions.
 let g:user_emmet_install_global = 0
+autocmd FileType html,css EmmetInstall
 
 # autocmd FileType html,css EmmetInstall
 # if you want to re-map << Ctrl y >> key to << Ctrl z >> 
@@ -752,4 +754,4 @@ $ :CocInstall coc-phpls
 # for Python3 
 $:CocInstall coc-pyright
 ```
-
+https://microsoft.github.io/language-server-protocol/implementors/tools/
