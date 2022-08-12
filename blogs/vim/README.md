@@ -16,8 +16,8 @@ for JavaScript, HTML, TypeScript, Angular, Flutter, Julia and Python language.
     2. moving in VIM
     3. everything TMUX
     4. VIM setup & Plugins, Macros
-    5. VIM for HTML, CSS, Node JS, JavaScript, TypeScript, Angular, Flutter, Julia, 
-	   Python
+    5. VIM for HTML, CSS, Node JS, JavaScript, TypeScript, Angular, Flutter, Julia,
+       Python
 
 Before we proceed with these tutorials, I assume you have a Linux machine, remote or locally available.
 Please visit this blog [Debian Linux VM](https://amit-shukla.medium.com/how-to-install-debian-10-buster-or-ubuntu-18-19-desktop-on-google-cloud-and-access-through-vnc-687c05d0d263) In case you want to setup a new virtual Debian Buster 10 or Ubuntu virtual machine.
@@ -47,7 +47,7 @@ Instead, users should fork a ppa repository for now and install it from ppa.
 $ sudo add-apt-repository ppa:jonathonf/vim
 ```
 
-Then after, try running 
+Then after, try running
 
 ```sh
 $ sudo apt install vim
@@ -62,7 +62,7 @@ VIM comes pre-installed with most of the Linux distributions, and user can find 
 binaries at
 
 ```sh
-$ cd ~/usr/share 
+$ cd ~/usr/share
 $ ls -la vim*
 ```
 
@@ -98,8 +98,8 @@ First, let's learn VIM modes,
 Command mode lets user do file/text operations, while Input mode is solely for writing text/content in file.
 
 ```html
-press key << i >> to enter input mode
-press key << Esc >> to switch to command mode
+press key << i >> to enter input mode press key << Esc >> to switch to command
+mode
 ```
 
 ## let's first understand few basics before we start learning VIM.
@@ -149,21 +149,21 @@ Once you get your hands on to these commands, trust me, I guarantee you, you wil
 ```
 
 **Rule #3** - put your right hand index finger on key << j >> and middle finger on key << k >>
-  next put your left hand ring finger close to << Esc >> key on your keyboard.  
-  
-  next memorize these keys to move up/down in text (Left Up Down Right) = h j k l
-  << j >> key moves down and << k >> moves up, h & l will be intuitive. You can change these settings
-  later (however not recommended at all).
+next put your left hand ring finger close to << Esc >> key on your keyboard.
 
-  Anytime is when a new file is opened, first
-  movement is literally downwards, and this is why, your << j >> key has bump for a reason, this
-  little bump on your j key helps you feel and locate << j >> key without looking at
-  your keyboard.
+next memorize these keys to move up/down in text (Left Up Down Right) = h j k l
+<< j >> key moves down and << k >> moves up, h & l will be intuitive. You can change these settings
+later (however not recommended at all).
+
+Anytime is when a new file is opened, first
+movement is literally downwards, and this is why, your << j >> key has bump for a reason, this
+little bump on your j key helps you feel and locate << j >> key without looking at
+your keyboard.
 
 **Rule #4** - small moves are performed using letter keys, for example, like hjkl,
-  moves you one character at a time, for bigger moves, you will need to press Ctr or
-  Shift keys. for example, << Ctrl + D >> or << Ctrl + u >> helps you moved page down or up.
-  I assume, you familiarized yourself with these words, now, let's use these words to move in VIM.
+moves you one character at a time, for bigger moves, you will need to press Ctr or
+Shift keys. for example, << Ctrl + D >> or << Ctrl + u >> helps you moved page down or up.
+I assume, you familiarized yourself with these words, now, let's use these words to move in VIM.
 
 ```sh
 $ vi << filename >>
@@ -208,8 +208,8 @@ $ :source /full/path/to/the/scriptfile.vim
 :wq write & quit # ZZ is same as :wq
 :q! quit without writing
 :sh run shell commands
-:mksession <<mksession_file_name>> 
-:source <<mksession_file_name>> # vim -S <<mksession_file_name>> 
+:mksession <<mksession_file_name>>
+:source <<mksession_file_name>> # vim -S <<mksession_file_name>>
 # will open saved session
 ```
 
@@ -413,6 +413,7 @@ tmux attach-session -t << session_name >> # attach to session_name
 ```
 
 ### moving between sessions
+
 ```vim
 Ctrl + b + w # session and window preview
 Ctrl + b + ( # move to previous
@@ -422,6 +423,7 @@ Ctrl + b + ) # move to next
 ## windows
 
 ### moving between windows in a session
+
 ```vim
 first create a session
 tmux new -s << session_name >> -n << window_name >>
@@ -450,6 +452,7 @@ Ctrl + b + x # close current pane
 ## moving in buffer and copy mode
 
 moving in buffer mostly honor VIM keybindings
+
 ### copy mode
 
 ```vim
@@ -543,7 +546,7 @@ call plug#begin()
 call plug#end()
 ```
 
-"	Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 ```vim
 colorscheme solarized8
@@ -554,14 +557,16 @@ let g:rainbow_active=1 # rainbow plugin activate globally
 ```
 
 ## working with VIM Macros
+
 VIM allows users to easily create and use macros across files to automate certain tasks automatically.
 
 For Example
 
     while working with Julia or Python notebooks, often, developers want to
-  add/include dependencies in beginning of their notebook.
-    in this example, we will create a macro, which automatically includes all these
-  dependencies.
+
+add/include dependencies in beginning of their notebook.
+in this example, we will create a macro, which automatically includes all these
+dependencies.
 
 ```python
 import numpy as np
@@ -585,29 +590,18 @@ call macro using command << @p >>
 ```
 
 # 5. VIM as IDE for HTML, CSS, Angular, Flutter, Julia & Python
+
 Before we jump on to setting up VIM as an IDE for development, I want to list out
 few functionalities which makes a good code editor a great IDE.
 
 ```html
-- built-in terminal
-- a great debugger
-- linting
-- syntax check
-- Go to definition
-- (auto)completion
-- Code Actions (automatic formatting, organize imports, ...)
-- Show method signatures
-- Show/go to references
-- Snippets
-- language grammar recommendations # varName vs VarName
-- access to language help, manual / documentation
-- auto imports
-- multi edit
-- multi file edit # changing a variable or method names across files
-- snippets/macros
-- open browser
-- multi window / panes / tabs
-- great file explorer
+- built-in terminal - a great debugger - linting - syntax check - Go to
+definition - (auto)completion - Code Actions (automatic formatting, organize
+imports, ...) - Show method signatures - Show/go to references - Snippets -
+language grammar recommendations # varName vs VarName - access to language help,
+manual / documentation - auto imports - multi edit - multi file edit # changing
+a variable or method names across files - snippets/macros - open browser - multi
+window / panes / tabs - great file explorer
 ```
 
 There are lots of such IDEs exist in market which provide most of these
@@ -618,7 +612,6 @@ VIM on the other hand is greatest code editor, needs some work to be setup as an
 IDE.
 
 In following sections, I will setup my VIM to include most of these functionalities.
- 
 
 One size doesn't fit all, this is why most of the code editor offer
 extensions/plugins for developers to work with their favorite programming language.
@@ -626,20 +619,16 @@ extensions/plugins for developers to work with their favorite programming langua
 Likewise, VIM offers plugin support and user may need to install different
 extensions/plugins to support their workflow.
 
-`in below section, we will learn more about Microsoft LSP protocol and it's support
-for different code editors. This LSP protocol is responsible for making a code editor
-to a smart IDE.`
+`in below section, we will learn more about Microsoft LSP protocol and it's support for different code editors. This LSP protocol is responsible for making a code editor to a smart IDE.`
 `
 
 [link to MS
 LSP](https://microsoft.github.io/language-server-protocol/implementors/tools/)
 
-`while, most of branded code editors comes prepackaged with these extensions, and
-VIM, NeoVIM, emacs has to go through hassle of setting up these extensions.
-This is hassle is worth learning and eventually outperforms other
-code editors.`
+`while, most of branded code editors comes prepackaged with these extensions, and VIM, NeoVIM, emacs has to go through hassle of setting up these extensions. This is hassle is worth learning and eventually outperforms other code editors.`
 
 ## VIM for HTML, CSS
+
 We will use emmet plugin for HTML code.
 
 ```vim
@@ -656,7 +645,7 @@ vim index.html
 ```
 
 By default, emmet plugin is enabled in all modes, it's good idea is to restrict
-  this plugin to only HTML, CSS files.
+this plugin to only HTML, CSS files.
 
 ```vim
 # add following code to your .vimrc file
@@ -665,7 +654,7 @@ let g:user_emmet_install_global = 0
 autocmd FileType html,css EmmetInstall
 
 # autocmd FileType html,css EmmetInstall
-# if you want to re-map << Ctrl y >> key to << Ctrl z >> 
+# if you want to re-map << Ctrl y >> key to << Ctrl z >>
 
 let g:user_emmet_leader_key='<C-Z>'`
 ```
@@ -676,6 +665,7 @@ link](https://github.com/mattn/emmet-vim)
 for complete documentation.
 
 ## VIM for Node JS, JavaScript, TypeScript, Angular
+
 Most of the modern language facilitate code auto-completion through LSP (Language
 Server Protocol). We will use [CoC - Conquer of Completion](https://github.com/neoclide/coc.nvim) vim plugin to configure
 language servers for LSP support.
@@ -708,7 +698,7 @@ $ npm -v
 $ npm install -g @angular/cli
 ```
 
-```sh
+````sh
 # add coc vim plugin to your .vimrc file Begin Plug ... End
 # Use release branch (recommend)
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -717,29 +707,55 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 $ vim ~/.vimrc
 $ :PlugInstall
 
+```vim
+# debugging coc.nvim error
+# in case, you see an error related to coc.nvm
+# remove coc.nvim and run PlugInstall again
+
+$ cd ~/.vim/config/plugged/
+$ rm -rf coc.nvim
+
+$ vim
+$ :PlugInstall
+````
+
 # above commands will setup up coc, and will save Language settings in
+
 coc-settings.json file
+
 # you can view contents of this file at
 
 $ vim ~/.config/nvim/coc-settings.json
 
 # or run CocConfig
+
 $ :CocConfig
 $ :CocInfo
 
-```
+````
 
 ## vim for web development, JSON, HTML, CSS, TypeScript
 
 ```vim
 # for generic web-development consider
 $ :CocInstall coc-tsserver coc-json coc-html coc-css
-```
+````
 
-## vim for Python, PHP 
+at this time, if you open a JavaScript or TypeScript file, you will see, certain
+code completion, reference, type defintions will be working.
+
+however, to complete all IDE settings like, include following settings to your
+`.vimrc' file. These settings map default coc-extension keybindings.
 
 ```vim
-# for Python3 
+# include these to your .vimrc file
+
+```
+
+## vim for Python, PHP
+
+```vim
+# for Python3
 $:CocInstall coc-pyright
 
 # for PHP
@@ -751,7 +767,6 @@ $ :CocInstall coc-phpls
 ## VIM for Julia, Python
 
 ```vim
-# for Python3 
+# for Python3
 $:CocInstall coc-pyright
 ```
-https://microsoft.github.io/language-server-protocol/implementors/tools/
