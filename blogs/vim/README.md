@@ -240,6 +240,19 @@ Shift + ^ | $ | v | m
 :vs | Ctrl + w, Ctrl + v
 :sp | :vs << file >> | will open file in split buffer
 moving in buffer - Ctrl + w, Ctrl + h | j | k | l
+
+# working with windows
+
+Ctrl + ws | split windows horz
+Ctrl + wv | split windows vert
+Ctrl + ww | split windows switch>
+
+```
+
+## open terminal inside vim
+
+```vim
+:term | :vert term | :shell
 ```
 
 ## multiple tabs
